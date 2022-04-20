@@ -60,21 +60,15 @@ ajout_entree_num=Entry(fenetre, width=10)
 ajout_button=Button(fenetre, text="Ajouter", command=ajout_contact)
 
 def supr_contact():
-    dico=choix_dico_1.get()
     information=supr_entree_nom.get()
-    del dico[information]
-    print(dico)
-    return "contact suprimer"
+    del repertoire[information]
+    print(repertoire)
+    return "contact suprimer",messagebox.showinfo("Success","contact suprimer avec succès")
 
 supr_label=Label(fenetre,text="Supprimer un contact")
 nom_supr_label=Label(fenetre,text="Nom: ")
 supr_entree_nom=Entry(fenetre, width=10)
 supr_button=Button(fenetre, text="Supprimer", command=supr_contact)
-
-repertoire2=[]
-v = StringVar()
-v.set(repertoire)
-choix_dico_1 = Radiobutton (fenetre, text="repeghghghrtoire", variable=v, value=repertoire)
 
 
 def affiche():
@@ -103,7 +97,6 @@ supr_label.pack(pady=20)
 nom_supr_label.pack()
 supr_entree_nom.pack()
 supr_button.pack()
-choix_dico_1.pack()
 
 affiche_button.pack(pady=20)
 
